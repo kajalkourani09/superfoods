@@ -1,0 +1,34 @@
+.fotsubmit{
+    transition: all 0.2s ease-in-out;
+    background-color:transparent;
+    border:none;
+    color:whitesmoke;
+    cursor:pointer
+}
+
+.em:focus{
+    outline: none;
+}
+
+.fotsubmit:hover{
+    scale: 0.7;
+}
+.fotlogo{
+    
+    width:200px;
+    height:200px
+}
+
+@media only screen and (max-width: 600px){
+    .fotlogo{
+        width:150px;
+        height:150px
+    }
+}
+
+@media only screen and (max-width: 340px){
+    .logonav{
+        width:120px;
+        height:130px
+    }
+}

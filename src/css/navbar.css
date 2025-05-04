@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.abd{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 6px;
+    /* position: absolute; */
+    /* bottom: 10px; */
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.imghi{
+    rotate:-30deg;
+    margin-left:10px;
+    width:35px;
+    height:35px;
+    transition: all 0.4s ease-in-out;
+}
+.hov{
+    position: relative;
+}
+
+.hov:hover{
+
+ .abd{
+    scale: 1.5;
+      
+ }
+ .imghi{
+    rotate:0deg;
+    margin-left:40px;
+    width:35px;
+    height:35px;
+    scale: 1.5;
+ }
+}
+.vertical{
+    bottom: -10%;
+    height:67.6vh;
+    position: absolute;
+    left: 100%;
+    display: block;
+    border-left: 1px solid black;
+}
+.abcdef
+{
+    display: flex;
+    position: absolute;
+    left: 10%;
+    bottom: 10px;
+    /* color: black; */
+    cursor: pointer;
+}
+
+.logonav{
+    width:200px;
+    height:200px
+}
+
+@media only screen and (max-width: 600px){
+    .abd{
+        color: black;
+        /* position: absolute; */
+        /* bottom: 50px; */
+        cursor: pointer;
+        /* left: 50%; */
+    }
+
+    .abcdef
+{
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    left: 40%;
+    /* color: black; */
+    cursor: pointer;
+}
+
+    .logonav{
+        width:150px;
+        height:150px
+    }
+}
+
+@media only screen and (max-width: 340px){
+    .logonav{
+        width:120px;
+        height:130px
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .vertical{
+        display: none;
+    }
+}

@@ -1,0 +1,308 @@
+import React from 'react'
+import { useState ,useRef} from 'react'
+import '../App.css'
+import fill from '../assests/icons/new-moon.png'
+import blank from '../assests/icons/dry-clean.png'
+import e from '../assests/icons/Round Website Icon pack/5.png'
+import f from '../assests/icons/Round Website Icon pack/6.png'
+import g from '../assests/icons/Round Website Icon pack/7.png'
+import h from '../assests/icons/Round Website Icon pack/8.png'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import { gsap } from 'gsap'
+import ProductCard from './ProductCard'
+import Front from '../assests/images/Front-min.png'
+import up from '../assests/icons/up.png'
+import down from '../assests/icons/down.png'
+import { useEffect } from 'react'
+import { ScrollTrigger } from 'gsap/all'
+
+
+function Anim() {
+    gsap.registerPlugin(ScrollTrigger)
+
+    let one=useRef(null)
+    let textone=useRef(null)
+
+
+    
+  const [isActive, setIsActive] = useState(false);
+  const [isActivee,setIsActivee]=useState(false);
+  const [isActiveee,setIsActiveee]=useState(false);
+
+  useEffect(()=>{
+    const tweenOne=gsap.to(textone,{
+        y:1000 - textone.clientHeight - 300,
+        scrollTrigger:{
+            trigger:one,
+            pin:one,
+            scrub:true,
+            start:"top top",
+            end:"+=2400px"
+        }
+    });
+    return () =>{
+        tweenOne.kill();
+    }
+
+
+    // tweenOne()
+  },[])
+
+
+  return (
+    <div>
+       <div className='container-fluid'>
+   
+        <div className='row' ref={el=>one=el}>
+        <div style={{position:"absolute"}}>
+      <Navbar></Navbar>
+      </div>
+      {/* <div style={{display:"flex"}}> */}
+            <div className='col-sm-6 one' style={{padding:0,backgroundColor:"#E0E0E0",height:"145vh"}}>
+                <img className='mainma' src={Front}></img>
+            </div>
+
+
+            <div className='col-sm-6 two' style={{overflow:"auto",height:"145vh"}}>
+            <div ref={el=>textone=el} className='rightcontent' style={{}}>
+            <h1 className='producthead'>Gourmet Raw Makhana</h1>
+            <div className='row buttonrounded' style={{display:"flex",flexDirection:"row"}}>
+                <div className='box' style={{width:"160px",height:"50px",backgroundColor:"",margin:"15px",borderStyle:"solid",borderRadius:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <div style={{marginTop:"",display:"flex",justifyContent:""}}>
+                  <div>
+                  <img src={fill} style={{width:"30px",height:"30px",margin:"0px",marginRight:"5px"}}></img>
+                  </div>
+                  <div>
+                  <img src={blank} style={{width:"25px",height:"25px",margin:"0px",marginRight:"5px"}}></img>
+                  </div>
+                  <div>
+                  <img src={blank} style={{width:"20px",height:"20px",margin:"0px",marginRight:"5px"}}></img>
+                  </div>
+                  <div>
+                  <img src={blank} style={{width:"15px",height:"15px",margin:"0px",marginRight:"5px"}}></img>
+                  </div>
+                </div>
+                </div>
+                <div className='box' style={{width:"160px",height:"50px",backgroundColor:"",margin:"15px",borderStyle:"solid",borderRadius:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <p style={{marginTop:"13px"}}> 6+ suta</p>
+                </div>
+               
+            </div>
+            <h4 style={{marginTop:"3vh"}}>Finest Popped |  Hand-Picked | Jumbo size</h4>
+            
+            
+            <div className='row' style={{marginTop:"10vw"}}>
+              <div className='col bloack' >
+                <h5>Description</h5>
+              </div>
+              <div className='col'>
+                <div className='row'>
+                  <a style={{textDecoration:"none"}} href={'https://koshaafoods.mini.store'}><div className='boxwholesale'>
+                    <h5 className='boxh1'>Buy Now</h5>
+                  </div></a>
+                </div>
+                <div className='row'>
+                  <p className='' style={{padding:"10px",marginTop:"1.8vw"}}>Our Gourmet variant of Makhana is the finest hand-picked Makhana. Best in class in terms of quality, size, and texture. Harvested out of the fully bloomed water lily flower and then sorted to perfection, each pop is always greater than 6+ suta for an elevated snacking experience. </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 4 logos */}
+
+            <div className='row' style={{display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"20px", marginTop:"10vw"}}>
+            <div style={{width:"150px",margin:"10px"}}>
+                <div className='box' style={{backgroundColor:"",width:"90px",height:"90px",borderRadius:"50px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <img src={e} style={{width:"90px",height:"90px"}}></img>
+                </div>
+                {/* <p> 100% Natural</p> */}
+                </div>
+
+              <div style={{width:"150px",margin:"10px"}}>
+                <div className='box' style={{backgroundColor:"",width:"90px",height:"90px",borderRadius:"50px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <img src={f} style={{width:"90px",height:"90px"}}></img>
+                </div>
+                {/* <p>Gluten-free</p> */}
+                </div>
+  
+                <div style={{width:"150px",margin:"10px"}}>
+                <div className='box' style={{backgroundColor:"#282C32",width:"80px",height:"80px",borderRadius:"50px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <img src={h} style={{width:"80px",height:"80px"}}></img>
+                </div>
+                {/* <p>100% Vegan</p> */}
+                </div>
+  
+               
+  
+                <div  className="" style={{width:"150px",margin:"10px"}}>
+                <div className='box' style={{backgroundColor:"#282C32",width:"80px",height:"80px",borderRadius:"50px",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <img src={g} style={{width:"80px",height:"80px"}}></img>
+                </div>
+                {/* <p className=''>Anti-Oxidants</p> */}
+                </div>
+            </div>
+
+            <div className='accordaintype' style={{marginTop:"7vw"}}>
+            <hr></hr>
+            
+            <div className='accordain-type'>
+            <div onClick={() => setIsActive(!isActive)} className='accordain-head d-flex justify-content-between' style={{padding:"20px"}}>
+            <div>
+              <p>Nutritional Info</p>
+              </div>
+             <div>{isActive ? <img style={{width:"20px",height:"20px"}} src={up}></img> : <img style={{width:"40px",height:"40px"}} src={down}></img>}
+              
+             </div>
+            </div>
+
+           {isActive &&  <div className='accordain-content container' style={{width:"80%",marginTop:"30px"}}>
+            
+            <div className='d-flex justify-content-between'>
+            <div>
+              <p>Calories</p>
+              </div>
+             <div>
+              <p>350 Kcal</p>
+              
+             </div>
+            </div>
+            <hr></hr>
+            <div className='d-flex justify-content-between'>
+            <div>
+              <p>Carbohydrate</p>
+              </div>
+             <div>
+              <p>77g</p>
+              
+             </div>
+            </div>
+            <hr></hr>
+            <div className='d-flex justify-content-between'>
+            <div>
+              <p>Protein</p>
+              </div>
+             <div>
+              <p>10 g</p>
+              
+             </div>
+            </div>
+            <hr></hr>
+            <div className='d-flex justify-content-between'>
+            <div>
+              <p>Fat</p>
+              </div>
+             <div>
+              <p>0.01 g</p>
+              
+             </div>
+            </div>
+
+            <hr></hr>
+            <div className='d-flex justify-content-between'>
+            <div>
+              <p>Fibre</p>
+              </div>
+             <div>
+              <p>14 g</p>
+              
+             </div>
+            </div>
+
+            <hr></hr>
+            <div className='d-flex justify-content-between'>
+            <div>
+              <p> Cholesterol</p>
+              </div>
+             <div>
+              <p>0 mg</p>
+              
+             </div>
+            </div>
+
+
+            </div>}
+            <hr></hr>
+            </div>
+
+            <div className='accordain-type'>
+
+            <div onClick={() => setIsActivee(!isActivee)} className='accordain-head d-flex justify-content-between' style={{padding:"20px"}}>
+            <div>
+              <p>Health Benefits</p>
+              </div>
+             <div>{isActivee ? <img style={{width:"20px",height:"20px"}} src={up}></img> : <img style={{width:"40px",height:"40px"}} src={down}></img>}
+              
+             </div>
+            </div>
+
+           {isActivee &&  <div className='accordain-content container' style={{width:"80%",marginTop:"30px"}}>
+            
+            <div className='d-flex justify-content-center'>
+            <ul>
+              <li>Maintains heart and kidney health</li>
+              <li>Good for diabetic patients</li>
+              <li>Zero cholesterol</li>
+              <li>High fiber for good gut </li>
+              <li>Antioxidants preventing early aging</li>
+              <li>High in calcium, protein, and iron</li>
+              <li>Good for fertility</li>
+              <li>Detoxifies liver</li>
+            </ul>
+            </div>
+
+           
+            </div>}
+            <hr></hr>
+            </div>
+
+            <div className='accordain-type'>
+            
+
+            <div className='accordain-type'>
+            <div onClick={() => setIsActiveee(!isActiveee)} className='accordain-head d-flex justify-content-between' style={{padding:"20px"}}>
+            <div>
+              <p>Packaging types available</p>
+              </div>
+             <div>{isActiveee ? <img style={{width:"20px",height:"20px"}} src={up}></img> : <img style={{width:"40px",height:"40px"}} src={down}></img>}
+              
+             </div>
+            </div>
+
+           {isActiveee &&  <div className='accordain-content container' style={{width:"80%",marginTop:"30px"}}>
+            
+            <div className='d-flex justify-content-between'>
+            <div>
+              <p>250 g, 1 Kg, 8 Kg</p>
+              </div>
+             
+            </div>
+            
+            </div>}
+            </div>
+
+            <hr></hr>
+            </div>
+
+            
+
+            </div>
+
+
+
+
+            </div>
+            </div>
+        </div>
+        {/* </div> */}
+    </div>
+    <div className='container-fluid' style={{width:"100%"}}>
+    <ProductCard/>
+    </div>
+    <div className='containe-fluid' style={{width:"100%"}}>
+      <Footer></Footer>
+    </div>
+    </div>
+  )
+}
+
+export default Anim
